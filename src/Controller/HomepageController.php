@@ -13,6 +13,7 @@ class HomepageController extends AbstractController
     public function index()
     {
      
+        
         //Appele du composant en tête
         //
         //Insertion du composant homepage
