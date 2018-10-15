@@ -1,6 +1,7 @@
-h1{
-    display:none;
+body {
+    background-color: lightgray;
 }
+
 .footer
 {
     text-align:center;
