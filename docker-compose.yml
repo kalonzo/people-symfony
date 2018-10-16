@@ -1,0 +1,44 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./.docker/web/Dockerfile
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8080:80
+    links:
+      - db
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: admin 
+      MYSQL_PASSWORD: admin1234
+      MYSQL_DATABASE: erp_lab4tech
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+  encore:
+    image: node:10-alpine
+    volumes:
+        - .:/var/www/html/
+    working_dir: /var/www/html/
+    command: ["yarn", "watch"]
+    links:
+      - web
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8082:80
+volumes:
+  project_file:
