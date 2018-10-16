@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Orp index{% endblock %}
+
+{% block body %}
+    <h1>Orp index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdOrp</th>
+                <th>Name</th>
+                <th>Prename</th>
+                <th>Gender</th>
+                <th>Street</th>
+                <th>Adresse</th>
+                <th>PostalCode</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for orp in orps %}
+            <tr>
+                <td>{{ orp.idOrp }}</td>
+                <td>{{ orp.name }}</td>
+                <td>{{ orp.prename }}</td>
+                <td>{{ orp.gender }}</td>
+                <td>{{ orp.street }}</td>
+                <td>{{ orp.adresse }}</td>
+                <td>{{ orp.postalCode }}</td>
+                <td>{{ orp.city }}</td>
+                <td>{{ orp.email }}</td>
+                <td>{{ orp.birthday }}</td>
+                <td>
+                    <a href="{{ path('orp_show', {'idOrp': orp.idOrp}) }}">show</a>
+                    <a href="{{ path('orp_edit', {'idOrp': orp.idOrp}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('orp_new') }}">Create new</a>
+{% endblock %}
