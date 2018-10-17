@@ -35,6 +35,8 @@ docker-compose logs -f mysql
 * See container logs: `docker-compose ${CONTAINER_NAME} -f web`
 * To stop server: `docker-compose down`
 
+You can find more docker commands on [docker-cli]
+
 # NO DOCKER
 
 ## Installation
@@ -43,6 +45,7 @@ docker-compose logs -f mysql
 
 ## Usage
 
-
 [docker]: https://www.docker.com/get-started
+[docker-cli]: https://docs.docker.com/engine/reference/commandline/cli/
+[docker-compose-cli]:https://docs.docker.com/compose/reference/
 [git]: https://git-scm.com/downloads
