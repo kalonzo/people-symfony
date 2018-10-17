@@ -49,7 +49,6 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN composer install
 
 #Install node modules through yarn
-RUN rm package-lock.json
 RUN yarn
 
 # remove var content and chmod it
