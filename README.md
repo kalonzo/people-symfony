@@ -84,7 +84,8 @@ Download & install from https://sourceforge.net/projects/wampserver/ proced inst
   </Directory>
 -->
 
-##Configuring Smfony project dependency
+
+## Configuring Smfony project dependency
 
 For Encore (JS/css/Jquery)
 First browse to your my-project directory with GIT bash and run 
@@ -98,7 +99,7 @@ For Doctrine (Database)
 ## Access (accesible from local network with your ip)
 
 * Web: http://localhost
-* Symfony project: http://localhost/my-project
+* Symfony project: http://localhost/people-symfony
 * PhpMyAdmin: http://localhost/phpmyadmin
 
 ## Usage
