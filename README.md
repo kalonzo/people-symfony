@@ -39,6 +39,11 @@ docker-compose logs -f mysql
 
 ## Usage
 
+### Access containers
+* web site - http://localhost:8080
+* phpmyadmin - http://localhost:8081
+* adminer - http://localhost:8082
+
 ### Most used docker commands
 
 * Run containers: `docker-compose up -d`
@@ -109,9 +114,13 @@ For Doctrine (Database)
 * Symfony project: http://localhost/people-symfony
 * PhpMyAdmin: http://localhost/phpmyadmin
 
-## Usage
+[Download full docx documention](./documentation/documentation.docx)
 
+<!---
+external links used in this document
+-->
 [docker]: https://www.docker.com/get-started
 [docker-cli]: https://docs.docker.com/engine/reference/commandline/cli/
 [docker-compose-cli]:https://docs.docker.com/compose/reference/
 [git]: https://git-scm.com/downloads
+

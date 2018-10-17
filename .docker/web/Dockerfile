@@ -11,12 +11,18 @@ make \
 libzip-dev \
 zip 
 
-# remove cmdtest it confilcts with yarn
+# remove cmdtest it confilicts with yarn
 RUN apt-get remove cmdtest
 
 # Install zip extention
 RUN docker-php-ext-configure zip --with-libzip
-RUN docker-php-ext-install zip pdo_mysql
+RUN docker-php-ext-install \
+zip \
+pdo_mysql
+
+# Install xdebug
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
 
 # Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
