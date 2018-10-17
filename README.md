@@ -89,14 +89,8 @@ For Doctrine (Database)
 'composer require symfony/orm-pack' and 'composer require symfony/maker-bundle --dev' 
 
 Configuring .env file at the project racine to point to your database
-
-# .env
-
-# customize this line!
+customize this line!
 DATABASE_URL="mysql://root:db_password@127.0.0.1:3306/db_name"
-
-# to use sqlite:
-# DATABASE_URL="sqlite:///%kernel.project_dir%/var/app.db"
 
 ## Usage
 
