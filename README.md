@@ -6,7 +6,7 @@
 
 ## Docker compose comes with 4 containers
 * web - an apache / php container
-* mysql - database container
+* db - mysql database container
 * phpmyadmin - database administation container
 * encore - webpack realtime compiler for assets
 
