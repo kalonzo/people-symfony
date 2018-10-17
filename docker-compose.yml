@@ -45,5 +45,7 @@ services:
       - 8081:80
     links:
       - mysql
+    environment:
+      PMA_HOST: mysql
 volumes:
   project_file:
