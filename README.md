@@ -4,13 +4,14 @@
 
 # DOCKER 
 
-## Docker compose comes with 4 containers
-* web - an apache / php container
+## Docker compose comes with 5 containers
+* web - an apache/php container. (http://localhost:8080)
 * mysql - mysql database container
-* phpmyadmin - database administation container
+* phpmyadmin - database administation container (http://localhost:8081)
+* adminer - database administration container (http://localhost:8082)
 * encore - webpack realtime compiler for assets
 
-## Installation
+## Install project and run containers
 
 1. Install [docker]
 1. Install [git]
@@ -23,27 +24,33 @@ You can follow progress on watching logs:
 docker-compose logs -f web
 docker-compose logs -f mysql
 ```
+## Install dependencies
 
-6. Log into web container: `docker-compose exec web bash`
-6. Migrate database: `php bin/console doctrine:migration:migrate`
+1. Log into web container: `docker-compose exec web bash`
+1. Install symfony dependencies: `composer update`
+1. Install node dependencies: `yarn`
+1. Exit console `exit`
+
+## Migrate database
+1. Log into web container: `docker-compose exec web bash`
+1. Migrate database: `php bin/console doctrine:migration:migrate`
+1. Exit console: `exit`
 
 
 ## Usage
 
+### Most used docker commands
+
 * Run containers: `docker-compose up -d`
-* Go into container to run symfony commands: `docker-compose exec web bash`
-* See container logs: `docker-compose ${CONTAINER_NAME} -f web`
+* Go into container: `docker-compose exec ${CONTAINER_NAME} bash`
+* See container logs: `docker-compose logs -f ${CONTAINER_NAME}`
 * To stop server: `docker-compose down`
 
 You can find more docker commands on [docker-cli] and [docker-compose-cli]
 
-## Access
 
-* Web: http://localhost:8080
-* Administer: http://localhost:8081
-* PhpMyAdmin: http://localhost:8082
 
-## Testing
+### Testing
 Go into web container and run tests
 ```
 docker-compose exec web bash
