@@ -87,14 +87,15 @@ Download & install from https://sourceforge.net/projects/wampserver/ proced inst
 ## Confuguring a Apache Server 
 1. type `composer require symfony/apache-pack` for run recipe from symfony (install necessary lib in you Apapche)
 2. Add this block to your C:\wamp64\bin\apache\apache2.4.27\conf\extra\httpd-vhosts.conf Alias to point your 'public' folder of Symfony project
-<!--
+```apache
   Alias /people-symfony "${INSTALL_DIR}/www/my-project/public"
   <Directory "${INSTALL_DIR}/www/my-project/public">
     Options +Indexes +Includes +FollowSymLinks +MultiViews
     AllowOverride All
     Require local
   </Directory>
--->
+
+```
 
 
 ## Configuring Smfony project dependency
