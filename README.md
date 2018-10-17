@@ -47,7 +47,7 @@ php bin/phpunit
 
 # NO DOCKER
 
-## Installation
+## ♥Installation♥
 
 ### Windows 10 Pro x64
 
@@ -55,15 +55,12 @@ php bin/phpunit
  
 Download & install from https://sourceforge.net/projects/wampserver/ proced install with PHP 7.1.9 and use MySQL for database server.
  
- ## Symfony dependency installation 
+## Symfony dependency installation 
 
-Download & run Composer-Setup.exe from https://getcomposer.org/doc/00-intro.md . For test composer type `composer` on a CMD
-
-Donwnload & run node-v8.12.0-x64 from https://nodejs.org/en/ 
-
-Donwnload & run yarn-1.10.1.msi from https://yarnpkg.com/lang/en/docs/install/#windows-stable 
-
-Download & run Git-2.19.1-64-bit.exe from https://gitforwindows.org/ this will install dependency for git project and better termina than classic CMD goes not store your command more than 3 input
+1. Download & run Composer-Setup.exe from https://getcomposer.org/doc/00-intro.md . For test composer type `composer` on a CMD
+2. Donwnload & run node-v8.12.0-x64 from https://nodejs.org/en/ 
+3. Donwnload & run yarn-1.10.1.msi from https://yarnpkg.com/lang/en/docs/install/#windows-stable 
+4. Download & run Git-2.19.1-64-bit.exe from https://gitforwindows.org/ this will install dependency for git project and better termina than classic CMD goes not store your command more than 3 input
 
 ## Installing & Setting up the Symfony Framework
 1. With CMD or Git Bash change to your 'www' directory by typing `cd C:\wamp64\www`
@@ -71,7 +68,6 @@ Download & run Git-2.19.1-64-bit.exe from https://gitforwindows.org/ this will i
 
 ## Confuguring a Apache Server 
 1. type `composer require symfony/apache-pack` for run recipe from symfony (install necessary lib in you Apapche)
-
 2. Add this block to your C:\wamp64\bin\apache\apache2.4.27\conf\extra\httpd-vhosts.conf Alias to point your 'public' folder of Symfony project
 
   Alias /people-symfony "${INSTALL_DIR}/www/my-project/public"
@@ -84,7 +80,9 @@ Download & run Git-2.19.1-64-bit.exe from https://gitforwindows.org/ this will i
 ##Configuring Smfony project dependency
 
 For Encore (JS/css/Jquery)
-First browse to your my-project directory with GIT bash and run 'composer require symfony/webpack-encore-pack' next 'yarn install'. 
+First browse to your my-project directory with GIT bash and run 
+1. `composer require symfony/webpack-encore-pack`
+2. `yarn install`. 
 
 For Doctrine (Database)
 'composer require symfony/orm-pack' and 'composer require symfony/maker-bundle --dev' 
