@@ -13,9 +13,10 @@ class CandidatType extends AbstractType
     {
         $builder
             ->add('gender')
-            ->add('prename')
+            ->add('firstName')
+            ->add('lastName')
             ->add('street')
-            ->add('adresse')
+            ->add('address')
             ->add('postalCode')
             ->add('city')
             ->add('email')

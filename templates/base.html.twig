@@ -3,10 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
+        <link href="{{ asset('build/old.css') }}" rel="stylesheet" />
         {% block stylesheets %} {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }}
+        <main role="main" class="container">
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </main>
+        {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }}
+        <script src="{{ asset('build/app.js') }}"></script>
     </body>
 </html>

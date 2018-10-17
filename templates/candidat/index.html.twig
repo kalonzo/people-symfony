@@ -2,9 +2,7 @@
 
 {% block title %}Candidat index{% endblock %}
 
-{% block body %}      
-    {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }}  
-    
+{% block body %}
     <h1>Candidat index</h1>
 
     <table class="table">
@@ -12,9 +10,10 @@
             <tr>
                 <th>IdCandidate</th>
                 <th>Gender</th>
-                <th>Prename</th>
+                <th>FirstName</th>
+                <th>LastName</th>
                 <th>Street</th>
-                <th>Adresse</th>
+                <th>Address</th>
                 <th>PostalCode</th>
                 <th>City</th>
                 <th>Email</th>
@@ -27,9 +26,10 @@
             <tr>
                 <td>{{ candidat.idCandidate }}</td>
                 <td>{{ candidat.gender }}</td>
-                <td>{{ candidat.prename }}</td>
+                <td>{{ candidat.firstName }}</td>
+                <td>{{ candidat.lastName }}</td>
                 <td>{{ candidat.street }}</td>
-                <td>{{ candidat.adresse }}</td>
+                <td>{{ candidat.address }}</td>
                 <td>{{ candidat.postalCode }}</td>
                 <td>{{ candidat.city }}</td>
                 <td>{{ candidat.email }}</td>
@@ -41,13 +41,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="11">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
     <a href="{{ path('candidat_new') }}">Create new</a>
-     
-    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}

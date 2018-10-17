@@ -4,18 +4,18 @@
 
 {% block body %}
  
-   {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }}   
+      
     
-   <div class="container">
+   
         <h1>
-            <span class="xspTextLabel">Home</span></h1>
+            <span>Home</span></h1>
         <br>
         <span class="glyphicon glyphicon-heart"></span>
         <span class="xspTextComputedField">Bienvenue sur l'ERP de Lab4Tech. Cet espace vous permet de saisir les candidat 
             inscrit au stage Lab4Tech et de les rattacher à un conseiller ORP.</span>
         <span class="glyphicon glyphicon-heart"></span>
-   </div>
+  
         
-{{ render(controller('App\\Controller\\LayoutController::footerAction'))  }}         
+     
         
 {% endblock %}
