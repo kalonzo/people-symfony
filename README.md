@@ -53,7 +53,7 @@ php bin/phpunit
 
 # NO DOCKER
 
-## ♥Installation♥
+## Installation
 
 ### Windows 10 Pro x64
 
