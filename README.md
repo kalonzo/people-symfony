@@ -49,7 +49,54 @@ php bin/phpunit
 
 ## Installation
 
-[TODO] describe all steps to install apache, mysql, etc.
+### Windows 10 Pro x64
+
+* WampServer Version 3.1.0 64bit Installation
+ 
+Download & install from https://sourceforge.net/projects/wampserver/ proced install with PHP 7.1.9 and use MySQL for database server.
+ 
+* Symfony dependency installation 
+
+Download & run Composer-Setup.exe from https://getcomposer.org/doc/00-intro.md . For test composer type 'composer' on a CMD
+
+Donwnload & run node-v8.12.0-x64 from https://nodejs.org/en/ 
+
+Donwnload & run yarn-1.10.1.msi from https://yarnpkg.com/lang/en/docs/install/#windows-stable 
+
+Download & run Git-2.19.1-64-bit.exe from https://gitforwindows.org/ this will install dependency for git project and better termina than classic CMD goes not store your command more than 3 input
+
+* Installing & Setting up the Symfony Framework
+With CMD or Git Bash change to your 'www' directory by typing 'cd C:\wamp64\www' and ran composer command 'composer create-project symfony/website-skeleton my-project' .
+
+* Confuguring a Apache Server 
+type 'composer require symfony/apache-pack' for run recipe from symfony (install necessary lib in you Apapche)
+
+Add this block to your C:\wamp64\bin\apache\apache2.4.27\conf\extra\httpd-vhosts.conf Alias to point your 'public' folder of Symfony project
+
+  Alias /people-symfony "${INSTALL_DIR}/www/my-project/public"
+  <Directory "${INSTALL_DIR}/www/my-project/public">
+    Options +Indexes +Includes +FollowSymLinks +MultiViews
+    AllowOverride All
+    Require local
+  </Directory>
+
+*Configuring Smfony project dependency
+
+For Encore (JS/css/Jquery)
+First browse to your my-project directory with GIT bash and run 'composer require symfony/webpack-encore-pack' next 'yarn install'. 
+
+For Doctrine (Database)
+'composer require symfony/orm-pack' and 'composer require symfony/maker-bundle --dev' 
+
+Configuring .env file at the project racine to point to your database
+
+# .env
+
+# customize this line!
+DATABASE_URL="mysql://root:db_password@127.0.0.1:3306/db_name"
+
+# to use sqlite:
+# DATABASE_URL="sqlite:///%kernel.project_dir%/var/app.db"
 
 ## Usage
 
