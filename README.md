@@ -35,7 +35,15 @@ docker-compose logs -f mysql
 * See container logs: `docker-compose ${CONTAINER_NAME} -f web`
 * To stop server: `docker-compose down`
 
-You can find more docker commands on [docker-cli]
+You can find more docker commands on [docker-cli] and [docker-compose-cli]
+
+## Testing
+Go into web container and run tests
+```
+docker-compose exec web bash
+php bin/phpunit
+```
+
 
 # NO DOCKER
 
