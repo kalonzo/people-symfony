@@ -6,7 +6,7 @@
 
 ## Docker compose comes with 4 containers
 * web - an apache / php container
-* mysql - database container
+* db - mysql database container
 * phpmyadmin - database administation container
 * encore - webpack realtime compiler for assets
 
@@ -36,6 +36,12 @@ docker-compose logs -f mysql
 * To stop server: `docker-compose down`
 
 You can find more docker commands on [docker-cli] and [docker-compose-cli]
+
+## Access
+
+* Web: http://localhost:8080
+* Administer: http://localhost:8081
+* PhpMyAdmin: http://localhost:8082
 
 ## Testing
 Go into web container and run tests
