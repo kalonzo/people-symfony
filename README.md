@@ -75,13 +75,14 @@ Download & install from https://sourceforge.net/projects/wampserver/ proced inst
 ## Confuguring a Apache Server 
 1. type `composer require symfony/apache-pack` for run recipe from symfony (install necessary lib in you Apapche)
 2. Add this block to your C:\wamp64\bin\apache\apache2.4.27\conf\extra\httpd-vhosts.conf Alias to point your 'public' folder of Symfony project
-
+<!--
   Alias /people-symfony "${INSTALL_DIR}/www/my-project/public"
   <Directory "${INSTALL_DIR}/www/my-project/public">
     Options +Indexes +Includes +FollowSymLinks +MultiViews
     AllowOverride All
     Require local
   </Directory>
+-->
 
 ##Configuring Smfony project dependency
 
@@ -91,8 +92,14 @@ First browse to your my-project directory with GIT bash and run
 2. `yarn install`. 
 
 For Doctrine (Database)
-'composer require symfony/orm-pack' and 'composer require symfony/maker-bundle --dev' 
+1. `composer require symfony/orm-pack` 
+2. `composer require symfony/maker-bundle --dev` 
 
+## Access (accesible from local network with your ip)
+
+* Web: http://localhost
+* Symfony project: http://localhost/my-project
+* PhpMyAdmin: http://localhost/phpmyadmin
 
 ## Usage
 
