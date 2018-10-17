@@ -46,6 +46,8 @@ RUN apt-get clean -y && apt-get autoclean -y && rm -r /var/lib/apt/lists/*
 # Copy local files to server
 COPY ./.docker/web/php.ini /usr/local/etc/php/conf.d/my.ini
 
+RUN a2enmod rewrite
+
 # Change Document root
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
