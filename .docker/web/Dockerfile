@@ -38,20 +38,9 @@ RUN npm install -g yarn
 RUN apt-get clean -y && apt-get autoclean -y && rm -r /var/lib/apt/lists/*
 
 # Copy local files to server
-COPY . .
+COPY ./.docker/web/php.ini /usr/local/etc/php/conf.d/my.ini
 
 # Change Document root
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
-# Install composer dependencies
-RUN composer install
-
-#Install node modules through yarn
-RUN yarn
-
-# remove var content and chmod it
-RUN rm -r /var/www/html/var/* 
-RUN chmod 777 -R /var/www/html/var
-RUN chmod 777 -R /var/www/html/public

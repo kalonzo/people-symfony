@@ -9,9 +9,9 @@ services:
     ports:
       - 8080:80
     links:
-      - db
+      - mysql
 
-  db:
+  mysql:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -26,11 +26,14 @@ services:
     restart: always
     ports:
       - 8081:8080
+    links:
+      - mysql
 
   encore:
     image: node:10-alpine
     volumes:
         - .:/var/www/html/
+    restart: always
     working_dir: /var/www/html/
     command: ["yarn", "watch"]
     links:
@@ -40,5 +43,7 @@ services:
     image: phpmyadmin/phpmyadmin
     ports:
       - 8082:80
+    links:
+      - mysql
 volumes:
   project_file:
