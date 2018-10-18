@@ -3,6 +3,7 @@
 {% block title %}Orp index{% endblock %}
 
 {% block body %}
+{{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
     <h1>Orp index</h1>
 
     <table class="table">
@@ -48,4 +49,5 @@
     </table>
 
     <a href="{{ path('orp_new') }}">Create new</a>
+    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}

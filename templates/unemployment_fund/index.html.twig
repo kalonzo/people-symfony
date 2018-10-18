@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UnemploymentFund index{% endblock %}
+
+{% block body %}
+    {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
+    <h1>UnemploymentFund index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdUnemploymentFund</th>
+                <th>Name</th>
+                <th>Street</th>
+                <th>Adresse</th>
+                <th>PostalCode</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for unemployment_fund in unemployment_funds %}
+            <tr>
+                <td>{{ unemployment_fund.idUnemploymentFund }}</td>
+                <td>{{ unemployment_fund.name }}</td>
+                <td>{{ unemployment_fund.street }}</td>
+                <td>{{ unemployment_fund.adresse }}</td>
+                <td>{{ unemployment_fund.postalCode }}</td>
+                <td>{{ unemployment_fund.city }}</td>
+                <td>{{ unemployment_fund.email }}</td>
+                <td>{{ unemployment_fund.phoneNumber }}</td>
+                <td>
+                    <a href="{{ path('unemployment_fund_show', {'idUnemploymentFund': unemployment_fund.idUnemploymentFund}) }}">show</a>
+                    <a href="{{ path('unemployment_fund_edit', {'idUnemploymentFund': unemployment_fund.idUnemploymentFund}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('unemployment_fund_new') }}">Create new</a>
+     {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
+{% endblock %}

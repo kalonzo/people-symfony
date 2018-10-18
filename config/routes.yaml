@@ -10,3 +10,7 @@ orp_show:
     path: /orp
     controller: App\Controller\OrpController::index
     
+unemploymentFund_show:
+    path: /caisseChomage
+    controller: App\Controller\UnemploymentFundController::index
+    
