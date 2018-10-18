@@ -1,5 +1,14 @@
+.header
+{
+    margin-bottom: 5%;
+    top:0;
+    width:100%;
+}
+
 .footer
 {
+    background-color: black;
+    color: antiquewhite;
     text-align:center;
     position: fixed;
     bottom:0;
