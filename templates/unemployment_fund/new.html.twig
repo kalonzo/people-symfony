@@ -3,12 +3,9 @@
 {% block title %}New UnemploymentFund{% endblock %}
 
 {% block body %}
-{{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
-
-    <h1>Create new UnemploymentFund</h1>
+    <h1>Inscription d'une nouvelle caisse de chômage</h1>
 
     {{ include('unemployment_fund/_form.html.twig') }}
 
     <a href="{{ path('unemployment_fund_index') }}">back to list</a>
-    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}

@@ -3,11 +3,9 @@
 {% block title %}New Orp{% endblock %}
 
 {% block body %}
-{{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
     <h1>Create new Orp</h1>
 
     {{ include('orp/_form.html.twig') }}
 
     <a href="{{ path('orp_index') }}">back to list</a>
-    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}

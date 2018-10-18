@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
      <head>         
@@ -8,6 +7,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body> 
+    <header>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -136,113 +136,9 @@
                 </div>
             </div>
         </nav>
+    </header>
         <script src="{{ asset('build/app.js') }}"></script>
             <br/><br/>
     </body>
 </html>
-=======
-<header>
 
-<div class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/">ERP</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Candidat
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
-                        <a href="{{ path('candidat_new') }}">
-                            <span class="glyphicon glyphicon-plus"></span>
-                            <span class="xspTextComputedField">Ajouter un candidat</span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
-                    <a href="{{ path('candidat_index') }}">
-                            <span class="glyphicon glyphicon-list"></span>
-                            <span class="xspTextComputedField">Visualiser les candidat</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Conseiller
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
-                        <a href="{{ path('orp_new') }}">
-                            <span class="glyphicon glyphicon-plus"></span>
-                            <span class="xspTextComputedField">Ajouter un conseiller ORP</span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
-                    <a href="{{ path('orp_index') }}">
-                            <span class="glyphicon glyphicon-list"></span>
-                            <span class="xspTextComputedField">Visualiser les conseiller ORP</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/absences.nsf/Enquetes_List.xsp">
-                    <span class="glyphicon glyphicon-list"></span>
-                    <span class="xspTextComputedField">Enquêtes</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/app/absences.nsf/MMT.xsp">
-                    <span class="glyphicon glyphicon-flag"> </span>
-                    <span class="xspTextComputedField">MMT</span>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Langue
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
-                        <a href="#">
-                            <img src="#"> Français</a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a href="#">
-                            <img src="#"> Anglais
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                User name
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
-                        <a href="http://192.168.0.111/App/Extranet2.nsf" target="_blank">
-                            <span class="glyphicon glyphicon-new-window"></span>
-                            <span class="xspTextComputedField">Extranet</span>
-                        </a>
-                    </li>
-                    <li class="dropdown-item">
-                        <a href="http://192.168.0.111/App/Projet.nsf" target="_blank">
-                            <span class="glyphicon glyphicon-new-window"></span>
-                            <span class="xspTextComputedField">Projet</span>
-                        </a>
-                    </li>
-                    <div class="dropdown-divider"></div>
-                    <li class="dropdown-item">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-log-out"></span>Déconnecter
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-</header>
->>>>>>> 90c6b9b8ffaea69ac16eb1ee6b7133c62bf32677

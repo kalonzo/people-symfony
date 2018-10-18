@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}ERP Lab4Tech{% endblock %}</title>
         {% block stylesheets %} {% endblock %}
     </head>
     <body>
+        {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }}  
     </body>
 </html>

@@ -3,7 +3,6 @@
 {% block title %}Candidat index{% endblock %}
 
 {% block body %}      
-    {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }}  
     
     <h1>Candidat index</h1>
 
@@ -49,5 +48,4 @@
 
     <a href="{{ path('candidat_new') }}">Create new</a>
      
-    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}
