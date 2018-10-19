@@ -31,9 +31,16 @@ class Candidat
     /**
      * @var string
      *
-     * @ORM\Column(name="prename", type="string", length=45, nullable=false)
+     * @ORM\Column(name="firstname", type="string", length=45, nullable=false)
      */
-    private $prename;
+    private $firstname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lastname", type="string", length=45, nullable=false)
+     */
+    private $lastname;
 
     /**
      * @var string
@@ -42,12 +49,6 @@ class Candidat
      */
     private $street;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adresse", type="string", length=45, nullable=false)
-     */
-    private $adresse;
 
     /**
      * @var string
@@ -73,7 +74,7 @@ class Candidat
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthday", type="datetime", nullable=false)
+     * @ORM\Column(name="birthday", type="date", nullable=false)
      */
     private $birthday;
 
@@ -94,14 +95,26 @@ class Candidat
         return $this;
     }
 
-    public function getPrename(): ?string
+    public function getFirstname(): ?string
     {
-        return $this->prename;
+        return $this->firstname;
     }
 
-    public function setPrename(string $prename): self
+    public function setFirstname(string $firstname): self
     {
-        $this->prename = $prename;
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
 
         return $this;
     }

@@ -2,8 +2,7 @@
 
 {% block title %}Candidat index{% endblock %}
 
-{% block body %}      
-    
+{% block body %}
     <h1>Candidat index</h1>
 
     <table class="table">
@@ -11,9 +10,9 @@
             <tr>
                 <th>IdCandidate</th>
                 <th>Gender</th>
-                <th>Prename</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
                 <th>Street</th>
-                <th>Adresse</th>
                 <th>PostalCode</th>
                 <th>City</th>
                 <th>Email</th>
@@ -26,13 +25,13 @@
             <tr>
                 <td>{{ candidat.idCandidate }}</td>
                 <td>{{ candidat.gender }}</td>
-                <td>{{ candidat.prename }}</td>
+                <td>{{ candidat.firstname }}</td>
+                <td>{{ candidat.lastname }}</td>
                 <td>{{ candidat.street }}</td>
-                <td>{{ candidat.adresse }}</td>
                 <td>{{ candidat.postalCode }}</td>
                 <td>{{ candidat.city }}</td>
                 <td>{{ candidat.email }}</td>
-                <td>{{ candidat.birthday ? candidat.birthday|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ candidat.birthday ? candidat.birthday|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('candidat_show', {'idCandidate': candidat.idCandidate}) }}">show</a>
                     <a href="{{ path('candidat_edit', {'idCandidate': candidat.idCandidate}) }}">edit</a>
@@ -47,5 +46,4 @@
     </table>
 
     <a href="{{ path('candidat_new') }}">Create new</a>
-     
 {% endblock %}

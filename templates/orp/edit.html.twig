@@ -3,7 +3,6 @@
 {% block title %}Edit Orp{% endblock %}
 
 {% block body %}
-{{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
     <h1>Edit Orp</h1>
 
     {{ include('orp/_form.html.twig', {'button_label': 'Update'}) }}
@@ -11,5 +10,4 @@
     <a href="{{ path('orp_index') }}">back to list</a>
 
     {{ include('orp/_delete_form.html.twig') }}
-    {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
 {% endblock %}

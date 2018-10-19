@@ -16,16 +16,16 @@
                 <td>{{ candidat.gender }}</td>
             </tr>
             <tr>
-                <th>Prename</th>
-                <td>{{ candidat.prename }}</td>
+                <th>Firstname</th>
+                <td>{{ candidat.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ candidat.lastname }}</td>
             </tr>
             <tr>
                 <th>Street</th>
                 <td>{{ candidat.street }}</td>
-            </tr>
-            <tr>
-                <th>Adresse</th>
-                <td>{{ candidat.adresse }}</td>
             </tr>
             <tr>
                 <th>PostalCode</th>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <th>Birthday</th>
-                <td>{{ candidat.birthday ? candidat.birthday|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ candidat.birthday ? candidat.birthday|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>
     </table>

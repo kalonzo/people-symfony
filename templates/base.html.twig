@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
 
         <title>{% block title %}ERP Lab4Tech{% endblock %}</title>
-        {% block stylesheets %} {% endblock %}
+        {% block stylesheets %} 
         <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% endblock %}
     </head>
     <body>
-
         <!--Inclusion du header dans tout les template html.twig qui utilise ce template -->
         {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
+        
+        <div class="main">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        </div>
         <!--Inclusion du footer dans tout les template html.twig qui utilise ce template -->
-        {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }}  
+        {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
+        
+
+        {% block javascripts %}
+         <script src="{{ asset('build/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

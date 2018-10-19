@@ -29,15 +29,6 @@ services:
     links:
       - mysql
 
-  encore:
-    image: node:10-alpine
-    volumes:
-        - .:/var/www/html/
-    restart: always
-    working_dir: /var/www/html/
-    command: ["yarn", "watch"]
-    links:
-      - web
       
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
