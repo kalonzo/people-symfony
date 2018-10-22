@@ -1,0 +1,19 @@
+stages:
+  - build
+
+image: docker
+
+services:
+  - docker:dind
+
+before_script:
+  - docker info
+  - docker-compose --version
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - docker-compose up -d
+
