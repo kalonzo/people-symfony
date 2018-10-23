@@ -17,6 +17,7 @@
                 <th>City</th>
                 <th>Email</th>
                 <th>Birthday</th>
+                <th>Is dooing Bilan</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td>{{ candidat.city }}</td>
                 <td>{{ candidat.email }}</td>
                 <td>{{ candidat.birthday ? candidat.birthday|date('Y-m-d') : '' }}</td>
+                <td>{{ candidat.doBilan ? 'true':'false' }}</td>
                 <td>
                     <a href="{{ path('candidat_show', {'idCandidate': candidat.idCandidate}) }}">show</a>
                     <a href="{{ path('candidat_edit', {'idCandidate': candidat.idCandidate}) }}">edit</a>

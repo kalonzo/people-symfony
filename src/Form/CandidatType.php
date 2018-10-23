@@ -20,6 +20,7 @@ class CandidatType extends AbstractType
             ->add('city')
             ->add('email')
             ->add('birthday')
+            ->add('doBilan')
         ;
     }
 

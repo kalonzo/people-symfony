@@ -78,6 +78,13 @@ class Candidat
      */
     private $birthday;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="do_bilan", type="boolean", nullable=false, options={"default":0})
+     */
+    private $doBilan;
+
     public function getIdCandidate(): ?int
     {
         return $this->idCandidate;
@@ -187,6 +194,17 @@ class Candidat
     public function setBirthday(\DateTimeInterface $birthday): self
     {
         $this->birthday = $birthday;
+
+        return $this;
+    }
+    public function getDoBilan(): ?bool
+    {
+        return $this->doBilan;
+    }
+
+    public function setDoBilan(bool $doBilan): self
+    {
+        $this->doBilan = $doBilan;
 
         return $this;
     }

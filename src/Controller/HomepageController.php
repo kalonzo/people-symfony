@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Candidat;
 
 class HomepageController extends AbstractController
 {
@@ -14,17 +15,14 @@ class HomepageController extends AbstractController
     {
      
         
-        //Appele du composant en tête
-        //
-        //Insertion du composant homepage
-        //
-        //Apell du module ce création des candidats 
-        //
-        //Appele du composant pied de page
-        
+        // get entity manager
+        $em = $this->getDoctrine()->getManager();
+  
         
         return $this->render('homepage/index.html.twig', [
             'controller_name' => 'HomepageController',
+            'nb_candidates' => $em->getRepository(Candidat::class)->count([]),
+            'nb_candidates_bilan' => $em->getRepository(Candidat::class)->count(["doBilan"=>1]),
         ]);
     }
 }
