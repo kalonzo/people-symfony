@@ -1,0 +1,1 @@
+require('tempusdominus-bootstrap-4/src/js/tempusdominus-bootstrap-4.js');

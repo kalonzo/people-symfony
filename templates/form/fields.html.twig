@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block date_picker_widget %}
+{% spaceless %}
+    {% block stylesheets %} 
+        {{ parent() }}
+        <link href="{{ asset('build/date_picker.css') }}" rel="stylesheet" />
+    {% endblock %}
+    {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('build/date_picker.js') }}"></script>
+    {% endblock %}
+        test
+        {{ form_widget(form) }}
+    {% endspaceless %}
+{% endblock %}
