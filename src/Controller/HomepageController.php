@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Candidat;
+use App\Entity\Candidates;
 
 class HomepageController extends AbstractController
 {
@@ -21,8 +21,8 @@ class HomepageController extends AbstractController
         
         return $this->render('homepage/index.html.twig', [
             'controller_name' => 'HomepageController',
-            'nb_candidates' => $em->getRepository(Candidat::class)->count([]),
-            'nb_candidates_bilan' => $em->getRepository(Candidat::class)->count(["doBilan"=>1]),
+            'nbCandidates' => $em->getRepository(Candidates::class)->count([]),
+            'doBilan' => $em->getRepository(Candidates::class)->count(["doBilan"=>1]),
         ]);
     }
 }

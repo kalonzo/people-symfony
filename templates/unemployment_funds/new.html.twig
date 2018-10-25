@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New UnemploymentFunds{% endblock %}
+
+{% block body %}
+    <h1>Create new UnemploymentFunds</h1>
+
+    {{ include('unemployment_funds/_form.html.twig') }}
+
+    <a href="{{ path('unemployment_funds_index') }}">back to list</a>
+{% endblock %}

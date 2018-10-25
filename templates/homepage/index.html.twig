@@ -21,14 +21,14 @@
                                 <span class="fa fa-star"></span>
                                 Nombre de candidat inscrit
                             </td>
-                            <td align="right">{{nb_candidates}}</td>
+                            <td align="right">{{nbCandidates}}</td>
                         </tr>
                         <tr class="clickable">
                             <td>
                                 <span class="fa fa-wrench"></span>
                                 Nombre de candidat en cours de bilan
                             </td>
-                            <td align="right">{{nb_candidates_bilan}}</td>
+                            <td align="right">{{doBilan}}</td>
                         </tr>
                         <tr class="clickable">
                             <td>
@@ -53,8 +53,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <a href="{{ path('candidat_new') }}" class="btn btn-success">Ajouter un candidat</a>
-                <a href="{{ path('candidat_index') }}" class="btn btn-primary">Liste des candidats</a>
+                <a href="{{ path('candidates_new') }}" class="btn btn-success">Ajouter un candidat</a>
+                <a href="{{ path('candidates_index') }}" class="btn btn-primary">Liste des candidats</a>
             </div>
         </div>
     </div>

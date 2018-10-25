@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UnemploymentFunds{% endblock %}
+
+{% block body %}
+    <h1>Edit UnemploymentFunds</h1>
+
+    {{ include('unemployment_funds/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('unemployment_funds_index') }}">back to list</a>
+
+    {{ include('unemployment_funds/_delete_form.html.twig') }}
+{% endblock %}

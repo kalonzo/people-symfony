@@ -3,12 +3,12 @@ index:
     controller: App\Controller\HomepageController::index
 
 candidat_show:
-    path: /candidat
-    controller: App\Controller\CandidatController::index
+    path: /candidates
+    controller: App\Controller\CandidatesController::index
     
 orp_show:
-    path: /orp
-    controller: App\Controller\OrpController::index
+    path: /orps
+    controller: App\Controller\OrpsController::index
     
 unemploymentFund_show:
     path: /caisseChomage

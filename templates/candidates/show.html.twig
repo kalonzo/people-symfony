@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidates{% endblock %}
+
+{% block body %}
+    <h1>Candidates</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCandidat</th>
+                <td>{{ candidate.idCandidat }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ candidate.gender }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ candidate.name }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ candidate.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ candidate.street }}</td>
+            </tr>
+            <tr>
+                <th>PostalCode</th>
+                <td>{{ candidate.postalCode }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ candidate.city }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ candidate.email }}</td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>{{ candidate.birthday ? candidate.birthday|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td>{{ candidate.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>CivilStatus</th>
+                <td>{{ candidate.civilStatus }}</td>
+            </tr>
+            <tr>
+                <th>OrpRegistrationDate</th>
+                <td>{{ candidate.orpRegistrationDate }}</td>
+            </tr>
+            <tr>
+                <th>DoBilan</th>
+                <td>{{ candidate.doBilan }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidates_index') }}">back to list</a>
+
+    <a href="{{ path('candidates_edit', {'idCandidat': candidate.idCandidat}) }}">edit</a>
+
+    {{ include('candidates/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidates index{% endblock %}
+
+{% block body %}
+    <h1>Candidates index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdCandidat</th>
+                <th>Gender</th>
+                <th>Name</th>
+                <th>LastName</th>
+                <th>Street</th>
+                <th>PostalCode</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>PhoneNumber</th>
+                <th>CivilStatus</th>
+                <th>OrpRegistrationDate</th>
+                <th>DoBilan</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for candidate in candidates %}
+            <tr>
+                <td>{{ candidate.idCandidat }}</td>
+                <td>{{ candidate.gender }}</td>
+                <td>{{ candidate.name }}</td>
+                <td>{{ candidate.lastName }}</td>
+                <td>{{ candidate.street }}</td>
+                <td>{{ candidate.postalCode }}</td>
+                <td>{{ candidate.city }}</td>
+                <td>{{ candidate.email }}</td>
+                <td>{{ candidate.birthday ? candidate.birthday|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ candidate.phoneNumber }}</td>
+                <td>{{ candidate.civilStatus }}</td>
+                <td>{{ candidate.orpRegistrationDate }}</td>
+                <td>{{ candidate.doBilan }}</td>
+                <td>
+                    <a href="{{ path('candidates_show', {'idCandidat': candidate.idCandidat}) }}">show</a>
+                    <a href="{{ path('candidates_edit', {'idCandidat': candidate.idCandidat}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidates_new') }}">Create new</a>
+{% endblock %}
